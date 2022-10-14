@@ -1,0 +1,76 @@
+d1 $ sound "bd*2 ~ sn cp hh"
+d2 $ s "hh ~ hh ~ hh"
+
+p 4321 $ "bd bd"
+p "almond" $ "hh cp ~ ~ sn"
+
+p "almond" $ silence
+once $ "numbers:1 numbers:2" 
+
+-- experiment with simple patters and random effects --
+d1 $ sound "drum" + n "6 2 3 [7 7]" + speed "0.5 0.2 0.1"
+d2 $ sound "glitch" + n "8 2 8 [5 5]" 
+d3 $ s "hardkick" + n "bd ~ ~ bd" + gain 0.66 + delay "1.2"
+d4 $ s "hand(<5 8 11>, 13, <5 4 2*2>)" # n (irand 13) + speed "0.3" + delay "0.2" + crush "4 2 1 0.5" 
+hush
+
+d1 
+  $ slow 4
+  $ sound "glitch" 
+  + n "3 2 [5 5]"
+  + speed "-0.8" 
+  + delay "1.2"
+
+d2
+  $ slow 4
+  $ s "hand(5, 6 , 7)"
+  + n "13 5 5 12"
+  + speed (0.5) 
+
+hush
+
+d1
+  $ s "bd(6,8) sn"
+
+d2
+  $ s "hh*8"
+
+d3
+  $ s "glitch"
+  + n "5*4"
+  + speed "0.85 0.88 0.89 0.95 1"
+
+d1
+  $ s "{bd bd} sn hh {drum glitch:5}"
+
+d1
+  $ s "{bd cp hh sn}%8"
+
+d1
+ $ s "hh hh . bd cp"
+
+d1
+ $ s "hh hh . bd cp sn"
+
+d1
+ $ s "hh hh bd cp sn"
+
+
+d1
+  $ s "[bd sn, drums:3 cp:3, hh*4]"
+  + speed "1 1 -0.4 1"
+
+hush
+hush
+
+
+
+--d1 $ s "drum" |+| n "2 3" + n "4 5 6"
+--d1 $ s "drum" |+| n "6 [7 8] 9"
+
+
+--*STOP*--
+----------
+hush
+panic
+----------
