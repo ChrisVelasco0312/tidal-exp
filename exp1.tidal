@@ -8,10 +8,29 @@ p "almond" $ silence
 once $ "numbers:1 numbers:2" 
 
 -- experiment with simple patters and random effects --
-d1 $ sound "drum" + n "6 2 3 [7 7]" + speed "0.5 0.2 0.1"
-d2 $ sound "glitch" + n "8 2 8 [5 5]" 
-d3 $ s "hardkick" + n "bd ~ ~ bd" + gain 0.66 + delay "1.2"
-d4 $ s "hand(<5 8 11>, 13, <5 4 2*2>)" # n (irand 13) + speed "0.3" + delay "0.2" + crush "4 2 1 0.5" 
+d1 
+  $ sound "drum" 
+  + n "6 2 3 [7 7]" 
+  + speed "0.5 0.2 0.1"
+  + gain 0.6
+
+d2 
+  $ sound "glitch" 
+  + n "8 2 8 [5 5]"
+
+d3 
+  $ s "hardkick" 
+  + n "bd ~ ~ bd" 
+  + gain 0.66 
+  + delay "1.2"
+
+d4 
+  $ s "hand(<5 8 11>, 13, <5 4 2*2>)" 
+  # n (irand 13) 
+  + speed "0.3" 
+  + delay "0.2" 
+  + crush "4 2 1 0.5" 
+
 hush
 
 d1 
@@ -19,13 +38,20 @@ d1
   $ sound "glitch" 
   + n "3 2 [5 5]"
   + speed "-0.8" 
-  + delay "1.2"
+  + delay "1.2" 
+  # gain 0.6
 
 d2
   $ slow 4
   $ s "hand(5, 6 , 7)"
   + n "13 5 5 12"
   + speed (0.5) 
+  + gain 0.8
+
+d3
+  $ s "[ bd(3,4) ~ ~ <sn:3(2,4) hh>, hh*4 ]"
+  + gain "0.95"
+  + delay "0.95"
 
 hush
 

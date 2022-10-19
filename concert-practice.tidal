@@ -82,7 +82,7 @@ d1
   # delayfeedback 0.9 
   # cut 1
 
---6.
+--6. ATMOSPHERE 2
 d1
   $ note "0 . ~ . 12" 
   |< s "pebbles" 

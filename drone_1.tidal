@@ -1,0 +1,88 @@
+hush
+
+d1
+  $ s "[bd*4, [hh:8, 808oh] 808oh [808oh hh:6] 808oh, ~ ~ hand:7(2,4) ~]"
+  + gain 0
+
+d2
+  $ s "808bd:8*2"
+  # pan cosine
+  # speed (sine + 0.4)
+  + gain "0"
+
+d3 
+  $ s "808bd:11*16"
+  # pan (cat [square, sine])
+  # speed (square + 2)
+  # speed "-0.5"
+  # pan (irand 24)
+  # gain "0.2"
+
+d8 
+  $ sound "808bd:20*128" 
+  # speed (slow 2 $ range 0.5 2 tri)
+  + speed "-0.2"
+  + gain 0.1
+
+d4 
+  $ sound "bd*64" 
+  # pan (slow 2 saw)
+  # gain 0.2
+
+d9 
+  $ every 2 (slow 2)
+  $ sound "drum(12,8)" 
+  # n (irand 8)
+  # gain 0.1
+  # pan rand
+
+hush
+
+d2 
+  $ s "bass:5(12, 8)" 
+  # lpf (range 200 5000 $ sine) 
+  + gain 0
+
+d15
+  $ every 2 (slow 2)
+  $ s "numbers"
+  + n "1 2 3 4 5 4 3 2 1"
+  + delay "0.2"
+  # speed "0.6 ~ ~ 0.2"
+  # gain "0"
+    
+
+d8
+  $ s "toys:5(3,4) <toys:9 toys:2*4>"
+  # gain "0.1"
+  # delay "1.2"
+  # pan rand
+  # cut 1000
+
+d3
+  $ s "hardkick(<2 4 6>, 8)"
+  # gain 0.1
+  # lsize rand
+
+d5
+  $ s "glitch"
+  + n "1 2(12,8) 2 5(3,8)"
+  # pan rand
+  + delay 0.4
+  + speed "-0.8"
+  + gain 0.1
+
+d6 
+  $ s "bass:5*8" 
+  # lpf (slow 4 $ range 200 5000 $ sine) 
+  # gain 1
+
+d1 $ n (fast 2 $ fmap (*3) $ run 2) 
+  # s "supergong" 
+  # decay "[1 0.4]/2" 
+  # voice "[1 0]/4"
+  # gain 0.9 
+
+hush
+
+panic
