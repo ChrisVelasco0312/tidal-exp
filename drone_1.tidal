@@ -1,14 +1,14 @@
 hush
 
 d1
-  $ s "[bd*4, [hh:8, 808oh] 808oh [808oh hh:6] 808oh, ~ ~ hand:7(2,4) ~]"
-  + gain 0
+  $ s "[bd*4, [hh:8, 808oh] 808oh [808oh hh:8] 808oh, ~ ~ hand:7(2,4) ~]"
+  + gain 0.8 
 
 d2
-  $ s "808bd:8*2"
+  $ s "808bd:8(12, 8)"
   # pan cosine
   # speed (sine + 0.4)
-  + gain "0"
+  + gain "0.8"
 
 d3 
   $ s "808bd:11*16"
@@ -16,13 +16,13 @@ d3
   # speed (square + 2)
   # speed "-0.5"
   # pan (irand 24)
-  # gain "0.2"
+  # gain "0.9"
 
 d8 
   $ sound "808bd:20*128" 
   # speed (slow 2 $ range 0.5 2 tri)
   + speed "-0.2"
-  + gain 0.1
+  + gain 0.4
 
 d4 
   $ sound "bd*64" 

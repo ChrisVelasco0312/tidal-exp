@@ -1,0 +1,54 @@
+d1 
+  $ n "[4 ~ [4 <1 5>], ~ 2 ~ 2*2]" 
+  # s "808bd" 
+  + gain "0.6"
+
+d1 
+ $ s "[kick:3*4]"
+ # gain "0.7"
+ # speed "0.5"
+
+d1
+ $ s "lo:2*2 hi:2"
+
+d2
+  $ every 2 (slow 2)
+  $ fast 2
+  $ s "casio:3(3,5) casio:1(2,8)"
+  # pan sine
+  # speed (cosine + 0.5)
+  # gain "0.7"
+  + accelerate (-4)
+
+hush
+
+d2 
+  $ every 2 (striate 2) . every 4 (slow 2) 
+  $ n "1 2 3 4 5" 
+  # s "numbers" 
+  # gain 0.4 
+  # cut 9 
+  # speed "0.8"
+
+d3 
+  $ fast 2 
+  $ s "glitch(3,4)" 
+  # n (irand 5) 
+  # pan rand 
+  # gain 0.6
+
+d4 
+  $ sound "bd*16" 
+  # pan cosine 
+  # speed (sine + 0.8) 
+  # gain rand
+
+hush
+
+d5
+  $ slow 2
+  $ sound "hand"
+  + n "5(3,8) [7 7] 8*4"
+  + speed "-0.5"
+
+
